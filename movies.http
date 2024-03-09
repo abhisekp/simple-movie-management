@@ -1,0 +1,53 @@
+### Get all movies
+GET http://localhost:7998/movies
+Accept: application/json
+
+### Get a movie by id
+GET http://localhost:7998/movies/1
+Accept: application/json
+
+### Get a movie revisions by id
+GET http://localhost:7998/movies/1/revisions
+Accept: application/json
+
+### Get a movie by id with a given revision sequence
+GET http://localhost:7998/movies/1?revSeq=1
+Accept: application/json
+
+### Create a movie
+POST http://localhost:7998/movies
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "1",
+  "title": "Mango Man",
+  "isbn": "182749",
+  "director": {
+    "firstName": "Abhi",
+    "lastName": "Pattnaik"
+  }
+}
+
+### Update a movie
+PATCH http://localhost:7998/movies/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "isbn": "818224"
+}
+
+### Update a movie to a revision sequence
+PATCH http://localhost:7998/movies/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "isbn": "01239",
+  "revSeq": 1
+}
+
+### Delete a movie
+DELETE http://localhost:7998/movies/1
+Content-Type: application/json
