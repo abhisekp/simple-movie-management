@@ -11,7 +11,7 @@ GET http://localhost:7998/movies/1/revisions
 Accept: application/json
 
 ### Get a movie by id with a given revision sequence
-GET http://localhost:7998/movies/1?revSeq=1
+GET http://localhost:7998/movies/1?revSeq=2
 Accept: application/json
 
 ### Create a movie
@@ -38,7 +38,7 @@ Accept: application/json
   "isbn": "818224"
 }
 
-### Update a movie to a revision sequence
+### Revert a movie to a revision sequence
 PATCH http://localhost:7998/movies/1
 Content-Type: application/json
 Accept: application/json
